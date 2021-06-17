@@ -1,18 +1,18 @@
 package strquestions
 
 func GetFirstNonRepeatingChar(str string) rune {
+	occurrences := [26]int{}
+
 	for i := 0; i < len(str); i++ {
-		var repeatingChar rune = '-'
+		currentChar := rune(str[i])
+		occurrences[currentChar-'a']++
+	}
 
-		for j := 0; j < len(str); j++ {
-			if i != j && str[i] == str[j] {
-				repeatingChar = rune(str[i])
-			}
-		}
-
-		if repeatingChar == '-' {
-			return rune(str[i])
+	for i, o := range occurrences {
+		if o == 1 {
+			return rune(i + 'a')
 		}
 	}
+
 	return '-'
 }
