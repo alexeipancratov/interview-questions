@@ -5,13 +5,14 @@ import (
 	"testing"
 )
 
-func TestGetFirstRepeatingChar(t *testing.T) {
+func TestGetFirstNonRepeatingChar(t *testing.T) {
 	scenarios := []struct {
 		input    string
 		expected rune
 	}{
 		{input: "aaabc", expected: 'b'},
 		{input: "aaabcccbda", expected: 'd'},
+		{input: "aaaabbbbccccdde", expected: 'e'},
 		{input: "aaabbbccc", expected: '-'},
 	}
 
