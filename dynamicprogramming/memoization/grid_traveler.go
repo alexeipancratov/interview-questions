@@ -2,6 +2,9 @@ package memoization
 
 import "fmt"
 
+/*
+Calculate number of ways to travel from the top left to the bottom right point.
+*/
 func GridTraveler(n int, m int, memo map[string]int) int {
 	if memo == nil {
 		memo = make(map[string]int)
