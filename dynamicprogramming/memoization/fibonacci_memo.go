@@ -1,4 +1,4 @@
-package dynamicprogramming
+package memoization
 
 func Fib(n int, memo map[int]int) int {
 	if memo == nil {

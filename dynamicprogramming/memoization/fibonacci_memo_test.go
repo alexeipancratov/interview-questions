@@ -1,14 +1,14 @@
-package dynamicprogramming_test
+package memoization_test
 
 import (
-	"interviewq/dynamicprogramming"
+	"interviewq/dynamicprogramming/memoization"
 	"testing"
 )
 
 func benchmarkFib(n int, b *testing.B) {
 	b.StartTimer()
 	for i := 0; i < b.N; i++ {
-		dynamicprogramming.Fib(n, nil)
+		memoization.Fib(n, nil)
 	}
 }
 
@@ -23,7 +23,7 @@ func BenchmarkFib_20(b *testing.B) {
 func benchmarkFibNonOptimized(n int, b *testing.B) {
 	b.StartTimer()
 	for i := 0; i < b.N; i++ {
-		dynamicprogramming.FibNonOptimized(n)
+		memoization.FibNonOptimized(n)
 	}
 }
 
