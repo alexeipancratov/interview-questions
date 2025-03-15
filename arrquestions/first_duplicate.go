@@ -26,12 +26,12 @@ func abs(number int) int {
 // Space complexity can be used to improve time complexity
 func GetFirstDuplicateMap(input *[]int) int {
 	arr := *input
-	visitedElements := make(map[int]int)
+	visitedElements := make(map[int]bool)
 	for i := 0; i < len(arr); i++ {
 		if _, ok := visitedElements[arr[i]]; ok {
 			return arr[i]
 		}
-		visitedElements[arr[i]] = 1
+		visitedElements[arr[i]] = true
 	}
 
 	return -1
